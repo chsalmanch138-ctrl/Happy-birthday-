@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Kashaf! 🎉</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a051b;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+        }
+
+        /* Ambient Glow Background */
+        .glow-1, .glow-2 {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            filter: blur(160px);
+            opacity: 0.25;
+            z-index: 1;
+        }
+        .glow-1 { background: #00ffcc; top: -10%; left: -10%; }
+        .glow-2 { background: #ff007f; bottom: -10%; right: -10%; }
+
+        /* Container Settings */
+        .box {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 30px;
+            border-radius: 24px;
+            width: 90%;
+            max-width: 480px;
+            text-align: center;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7);
+            z-index: 5;
+            transition: all 0.4s ease-in-out;
+        }
+
+        /* Step 1: Upgraded Unlock Screen */
+        .secure-badge {
+            background: rgba(0, 255, 204, 0.1);
+            color: #00ffcc;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            font-family: 'Fira Code', monospace;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 14px 20px;
+            border-radius: 14px;
+            color: #fff;
+            font-size: 1.1rem;
+            outline: none;
+            text-align: center;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #ff007f;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff007f, #7f00ff);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 14px;
+            margin-top: 25px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5);
+        }
+
+        /* Step 2: Funny Question Screen */
+        .question-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #ffbc00;
+            margin-bottom: 25px;
+        }
+
+        .option-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 12px 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .option-btn:hover {
+            background: rgba(255, 0, 127, 0.15);
+            border-color: #ff007f;
+            padding-left: 20px;
+        }
+
+        .funny-reply {
+            margin-top: 15px;
+            color: #00ffcc;
+            font-weight: 600;
+            font-style: italic;
+            min-height: 24px;
+        }
+
+        /* Step 3: Main Wishes Screen */
+        .celebrate-card h1 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00ffcc, #ff007f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        .wishes {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+        }
+
+        /* Footer Signature */
+        .footer-credit {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            margin-top: 10px;
+            font-family: 'Fira Code', monospace;
+        }
+        .footer-credit span {
+            color: #ff007f;
+            font-weight: bold;
+        }
+
+        .hidden { display: none !important; }
+
+        /* Floating Objects Animation */
+        .balloon {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp 3.5s ease-in forwards;
+            z-index: 2;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <!-- STEP 1: UPGRADED UNLOCK SCREEN -->
+    <div class="box" id="step1">
+        <div class="secure-badge">ACCESS_GATEWAY</div>
+        <h2>Enter Secret Key to Access Gift</h2>
+        <input type="text" id="nameInput" placeholder="Type Birthday Girl Name Here..." autocomplete="off">
+        <button class="btn" onclick="verifyName()">DECRYPT SIGNALS</button>
+    </div>
+
+    <!-- STEP 2: FUNNY INTERACTIVE QUESTION -->
+    <div class="box hidden" id="step2">
+        <div class="secure-badge" style="color: #ffbc00; border-color: rgba(255, 188, 0, 0.3);">CRITICAL_SURVEY</div>
+        <p class="question-text">Kashaf, tmne es duniya me ake kya teer mar lia? 😂</p>
+        
+        <button class="option-btn" onclick="showReply(1)">🎯 1. Sirf mobile chalaya aur ghar walon se daant khayi.</button>
+        <button class="option-btn" onclick="showReply(2)">🎯 2. Oxygen consume karke carbon dioxide chori ki.</button>
+        <button class="option-btn" onclick="showReply(3)">🎯 3. Dharti par bojh banne ka naya record banaya!</button>
+
+        <div class="funny-reply" id="replyBox"></div>
+        <button class="btn hidden" id="nextToWishBtn" onclick="goToWish()" style="background: linear-gradient(45deg, #00ffcc, #0072ff); color: #000;">Chalo Ab Wish Dekho! ➡️</button>
+    </div>
+
+    <!-- STEP 3: FINAL CELEBRATION CARD -->
+    <div class="box hidden celebrate-card" id="step3">
+        <h1>Happy Birthday, Kashaf! 🎂</h1>
+        <p class="wishes">
+            Allah Pak aapko dunya aur akhrat ki tamam khushiyan naseeb farmayein. Aapki har dua qubool ho, hamesha kamyabi aapke kadam choome aur aap yunhi hansti muskurati raho. Have a fantastic and blessed year ahead! 🚀🎈
+        </p>
+        
+        <div class="footer-credit">
+            Made with ❤️ by <span>Salman</span>
+        </div>
+    </div>
+
+    <script>
+        function verifyName() {
+            let name = document.getElementById('nameInput').value.trim();
+            if(name.toLowerCase() === 'kashaf') {
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+            } else {
+                alert("Incorrect Key! valid key input: 'Kashaf'");
+            }
+        }
+
+        function showReply(option) {
+            let reply = "";
+            if(option === 1) reply = "Hahaha bilkul sahi! Isme toh tum expert ho! 📱😂";
+            if(option === 2) reply = "Sachi batayi hna! Eco-system ka nuqsan kar rahi ho bus! 🌍💀";
+            if(option === 3) reply = "Heavy teer mara hai phir toh! 👑😭";
+
+            document.getElementById('replyBox').innerText = reply;
+            document.getElementById('nextToWishBtn').classList.remove('hidden');
+        }
+
+        function goToWish() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+            // Trigger endless loop of floating celebration elements
+            setInterval(spawnBalloons, 300);
+        }
+
+        function spawnBalloons() {
+            const elements = ['🎈', '🎉', '✨', '🎂', '🥳', '🎁'];
+            for(let i=0; i<6; i++) {
+                const item = document.createElement('div');
+                item.classList.add('balloon');
+                item.innerText = elements[Math.floor(Math.random() * elements.length)];
+                item.style.left = Math.random() * 100 + 'vw';
+                item.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                item.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                document.body.appendChild(item);
+                
+                setTimeout(() => { item.remove(); }, 3500);
+            }
+        }
+    </script>
+</body>
+</html>
